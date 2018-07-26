@@ -11,19 +11,18 @@ View <=> ViewModel <=> Model
 
 ## View
 
-- very light (No logic here)
-- informs VM about user actions
-- has reference to ViewModel
-- consumes data from ViewModel
-- it observes the ViewModel for changes in data to present
+- very light (no logic here)
+- informs ViewModel about ui changes
+- is subscribed to ViewModel and consumes data from it to update ui
 
 ## ViewModel
 
-- exposes stream of data to the View
-- uses Model to get/save data
+- exposes stream of data through observables
+- uses Model to get/update data
 - has no reference to the View
 - broadcasts data and doesn't care who listens
 
 ## Model
 
-- abstracts data source
+- in charge of data and business logic
+- expose data through observables
