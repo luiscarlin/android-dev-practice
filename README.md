@@ -1,1 +1,1 @@
-# android-dev-practice
+# android-mvvm-spike
