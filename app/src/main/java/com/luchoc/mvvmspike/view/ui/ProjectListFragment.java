@@ -44,6 +44,8 @@ public class ProjectListFragment extends LifecycleFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        // Obtain the ProjectListViewModel to observe it for changes
         final ProjectListViewModel viewModel =
                 ViewModelProviders.of(this).get(ProjectListViewModel.class);
 
@@ -52,7 +54,10 @@ public class ProjectListFragment extends LifecycleFragment {
 
     private void observeViewModel(ProjectListViewModel viewModel) {
         // Update the list when the data changes
+        // add an observer to the observe list for this viewmodel
         viewModel.getProjectListObservable().observe(this, new Observer<List<Project>>() {
+
+            // when it changes, update the list of projects in the view
             @Override
             public void onChanged(@Nullable List<Project> projects) {
                 if (projects != null) {
