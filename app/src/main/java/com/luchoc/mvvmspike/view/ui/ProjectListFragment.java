@@ -21,6 +21,7 @@ import com.luchoc.mvvmspike.viewmodel.ProjectListViewModel;
 import java.util.List;
 
 // Displays the list of google Github projects
+// a fragment is a lifeycleowner
 
 public class ProjectListFragment extends LifecycleFragment {
     public static final String TAG = "ProjectListFragment";
