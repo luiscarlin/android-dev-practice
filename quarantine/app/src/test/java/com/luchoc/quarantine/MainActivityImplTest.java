@@ -13,7 +13,7 @@ public class MainActivityImplTest {
     MainActivityQtn qtn;
 
     @Test
-    public void displays_hello_world_on_create() {
+    public void renders_activity_main_on_create() {
         MainActivityImpl impl = new MainActivityImpl(qtn);
         impl.onCreate();
         verify(qtn, times(1)).setContentView(R.layout.activity_main);
