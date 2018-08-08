@@ -16,6 +16,8 @@ public class MainActivityQtn extends AppCompatActivity {
 
         // creates the dagger dependency graph and injects members into this file
         ((MainApplication) getApplication()).getAppComponent().inject(this);
+
+        // continue doing the rest
         impl.onCreate(this);
     }
 }
