@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "311168202880",
+    "firebase_url": "https://pushnotifications-6fca5.firebaseio.com",
+    "project_id": "pushnotifications-6fca5",
+    "storage_bucket": "pushnotifications-6fca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311168202880:android:980d3013d4b6dcbd",
+        "android_client_info": {
+          "package_name": "com.luchoc.pushnotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311168202880-oetrl2fusqil484ps090qo75inu6kq2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbvoDFcs0-CQzglXEdfCO9f_Kq4S7Yug4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
