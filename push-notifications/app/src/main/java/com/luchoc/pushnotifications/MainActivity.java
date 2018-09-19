@@ -2,6 +2,8 @@ package com.luchoc.pushnotifications;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -19,11 +21,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendNotification(View view) {
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "MYCHANNEL")
+        // Create an explicit intent for an Activity in your app
+        Intent intent = new Intent(this, EmailActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, "MYCHANNEL")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("TItle")
-                .setContentText("ContentText")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setContentTitle("New Email")
+                .setContentText("You have a new email. Please check your app.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(123, mBuilder.build());
